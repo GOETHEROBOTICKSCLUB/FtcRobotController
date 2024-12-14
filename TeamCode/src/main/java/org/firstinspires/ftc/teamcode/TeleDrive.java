@@ -22,14 +22,17 @@ public class TeleDrive extends LinearOpMode {
         RL = hardwareMap.dcMotor.get("rl");
         RR = hardwareMap.dcMotor.get("rr");
 
+
         waitForStart();
         while(opModeIsActive()) {
-            x = gamepad1.left_stick_x;
-            y = -gamepad1.left_stick_y;
+            x = -gamepad1.left_stick_x;
+            y = gamepad1.left_stick_y;
             r = -gamepad1.left_trigger + gamepad1.right_trigger;
             move(x, y, r);
             telemetry.addLine("hello world");
-            telemetry.update();
+            telemetry.update(); //для вывода на экран(обнова экрана)
+            telemetry.addLine("Roma");
+
         }
     }
 
