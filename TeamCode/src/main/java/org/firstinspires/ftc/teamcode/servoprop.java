@@ -41,7 +41,12 @@ public class servoprop  extends LinearOpMode {
                 float x = gamepad2.left_stick_x;
                 serM.setPower(x);
             }
+            if(gamepad2.left_stick_x < 0){
+                float x = gamepad2.left_stick_x;
+                serM.setPower(x);
+            }
             serM.setPower(0);
+
             a = -gamepad1.left_stick_x;
             b = gamepad1.left_stick_y;
             if (gamepad2.x && f <= 1) {
